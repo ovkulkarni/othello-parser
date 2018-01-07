@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 setup(
     name='othello_parser_tjhsst',
     packages=['othello_parser_tjhsst'],
