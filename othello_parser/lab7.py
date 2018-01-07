@@ -8,6 +8,7 @@ class Lab7Parser(ArgumentParser):
         super(Lab7Parser, self).__init__(*args, **kwargs)
         self.add_argument("puzzle", nargs='?', default=self.default_puzzle)
         self.add_argument("next_player", nargs='?', default=self.calc_player(self.default_puzzle))
+        self.add_argument("extra", nargs='*')
 
     def valid_puzzle(self, puzzle):
         return isinstance(puzzle, str) and len(puzzle) == 64
