@@ -24,7 +24,7 @@ class Lab4Parser(ArgumentParser):
         return ["O", "X"][puzzle.count('.') % 2 == 1]
 
     def parse_args(self, args=None, namespace=None):
-        args = super(OthelloParser, self).parse_args(args, namespace)
+        args = super(Lab4Parser, self).parse_args(args, namespace)
         set_player = False
         if not self.valid_player(args.human_token):
             args.extra = [args.human_token] + args.extra
