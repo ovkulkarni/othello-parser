@@ -1,11 +1,11 @@
 from argparse import ArgumentParser
 
 
-class Lab5Parser(ArgumentParser):
+class Lab8Parser(ArgumentParser):
 
     def __init__(self, *args, **kwargs):
         self.default_puzzle = '...........................OX......XO...........................'
-        super(Lab5Parser, self).__init__(*args, **kwargs)
+        super(Lab8Parser, self).__init__(*args, **kwargs)
         self.add_argument("puzzle", nargs='?', default=self.default_puzzle)
         self.add_argument("next_player", nargs='?', default=self.calc_player(self.default_puzzle))
 
