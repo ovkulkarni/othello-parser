@@ -11,7 +11,6 @@ class Lab3Parser(ArgumentParser):
         self.add_argument("extra", nargs='*')
 
     def valid_puzzle(self, puzzle):
-        print(len(puzzle))
         return isinstance(puzzle, str) and len(puzzle) == 64
 
     def valid_player(self, player):

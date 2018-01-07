@@ -11,7 +11,6 @@ class Lab4Parser(ArgumentParser):
         self.add_argument("extra", nargs='*')
 
     def valid_puzzle(self, puzzle):
-        print(len(puzzle))
         return isinstance(puzzle, str) and len(puzzle) == 64
 
     def valid_player(self, player):
@@ -21,7 +20,7 @@ class Lab4Parser(ArgumentParser):
         return ["X", "O"][puzzle.count('.') % 2 == 1]
 
     def calc_human(self, puzzle):
-        return ["O", "X"][puzzle.count('.') % 2 == 1]
+        return ["o", "x"][puzzle.count('.') % 2 == 1]
 
     def parse_args(self, args=None, namespace=None):
         args = super(Lab4Parser, self).parse_args(args, namespace)
@@ -38,8 +37,10 @@ class Lab4Parser(ArgumentParser):
             args.puzzle = self.default_puzzle
         if set_player:
             args.human_token = self.calc_human(args.puzzle)
-        if args.human_token.upper() == args.human_token and not set_player:
+        if args.human_token.upper() == args.human_token:
             args.next_player = args.human_token
         else:
             args.next_player = self.calc_player(args.puzzle)
+        args.human_token = args.human_token.upper()
+        args.next_player = args.next_player.upper()
         return args

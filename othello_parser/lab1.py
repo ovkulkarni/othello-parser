@@ -10,7 +10,6 @@ class Lab1Parser(ArgumentParser):
         self.add_argument("next_player", nargs='?', default=self.calc_player(self.default_puzzle))
 
     def valid_puzzle(self, puzzle):
-        print(len(puzzle))
         return isinstance(puzzle, str) and len(puzzle) == 64
 
     def valid_player(self, player):
