@@ -1,0 +1,15 @@
+setup.cfg
+setup.py
+othello_parser_tjhsst/__init__.py
+othello_parser_tjhsst/lab1.py
+othello_parser_tjhsst/lab2.py
+othello_parser_tjhsst/lab3.py
+othello_parser_tjhsst/lab4.py
+othello_parser_tjhsst/lab5.py
+othello_parser_tjhsst/lab6.py
+othello_parser_tjhsst/lab7.py
+othello_parser_tjhsst/lab8.py
+othello_parser_tjhsst.egg-info/PKG-INFO
+othello_parser_tjhsst.egg-info/SOURCES.txt
+othello_parser_tjhsst.egg-info/dependency_links.txt
+othello_parser_tjhsst.egg-info/top_level.txt

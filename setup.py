@@ -2,7 +2,7 @@ from setuptools import setup
 setup(
     name='othello_parser_tjhsst',
     packages=['othello_parser_tjhsst'],
-    version='1.0',
+    version='1.0.3',
     description='Othello Parser for TJHSST Labs',
     author='Omkar Kulkarni',
     author_email='okulkarni@tjhsst.edu',
