@@ -7,7 +7,7 @@ class Lab6Parser(ArgumentParser):
         self.default_puzzle = '...........................OX......XO...........................'
         super(Lab6Parser, self).__init__(*args, **kwargs)
         self.add_argument("puzzle", nargs='?', default=self.default_puzzle)
-        self.add_argument("next_player", nargs='?', default=self.calc_player(self.default_puzzle))
+        self.add_argument("next_player", nargs='?', default='_')
         self.add_argument("extra", nargs='*')
 
     def valid_puzzle(self, puzzle):
@@ -21,8 +21,8 @@ class Lab6Parser(ArgumentParser):
 
     def parse_args(self, args=None, namespace=None):
         args = super(Lab6Parser, self).parse_args(args, namespace)
-        set_player = False
-        if not self.valid_player(args.next_player):
+        set_player = (args.next_player == "_")
+        if not self.valid_player(args.next_player) and not set_player:
             args.extra = [args.next_player] + args.extra
             set_player = True
         if not self.valid_puzzle(args.puzzle):
